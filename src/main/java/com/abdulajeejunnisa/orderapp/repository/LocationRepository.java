@@ -1,11 +1,11 @@
 package com.abdulajeejunnisa.orderapp.repository;
 
-import com.abdulajeejunnisa.orderapp.model.Order;
+import com.abdulajeejunnisa.orderapp.model.Location;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface OrderRepository
-        extends JpaRepository<Order, Long> {
+public interface LocationRepository
+        extends JpaRepository<Location, Long> {
 
 }

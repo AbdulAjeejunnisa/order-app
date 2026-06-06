@@ -6,7 +6,7 @@ import com.abdulajeejunnisa.orderapp.service.OrderService;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class Main {
+public class Order {
 
     public static void main(String[] args) {
 
@@ -96,7 +96,7 @@ public class Main {
             int quantity = sc.nextInt();
             System.out.print("Enter Amount: ");
             double amount = sc.nextDouble();
-            Order order = new Order(
+            com.abdulajeejunnisa.orderapp.model.Order order = new com.abdulajeejunnisa.orderapp.model.Order(
                     orderId,
                     customer,
                     location,

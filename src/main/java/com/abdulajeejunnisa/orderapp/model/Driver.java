@@ -1,29 +1,42 @@
 package com.abdulajeejunnisa.orderapp.model;
 
-public class Driver extends User{
-    private final String vehicleNumber;
-    public Driver( int uid, String name, String email, String phoneNo,String vehicleNumber) {
-        super(uid, name, email, phoneNo);
-        if (vehicleNumber == null ||
-                vehicleNumber.isBlank()) {
+import jakarta.persistence.*;
 
-            throw new IllegalArgumentException(
-                    "Vehicle number cannot be empty"
-            );
-        }
+@Entity
+@Table(name = "drivers")
+public class Driver extends User {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long driverId;
+
+    private String vehicleNumber;
+
+    public Driver() {
+    }
+
+    public Driver(String name,
+                  String email,
+                  String phoneNo,
+                  String vehicleNumber) {
+
+        super(name, email, phoneNo);
         this.vehicleNumber = vehicleNumber;
     }
-    
+
+    public Long getDriverId() {
+        return driverId;
+    }
+
+    public void setDriverId(Long driverId) {
+        this.driverId = driverId;
+    }
+
     public String getVehicleNumber() {
         return vehicleNumber;
     }
 
-    @Override
-    public String toString() {
-        return "Driver{" +
-                "name='" + getName() + '\'' +
-                ", vehicleNumber='" + vehicleNumber + '\'' +
-                '}';
-
+    public void setVehicleNumber(String vehicleNumber) {
+        this.vehicleNumber = vehicleNumber;
     }
 }

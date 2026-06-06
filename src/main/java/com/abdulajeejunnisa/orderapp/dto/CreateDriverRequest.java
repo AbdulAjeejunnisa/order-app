@@ -1,20 +1,13 @@
-package com.abdulajeejunnisa.orderapp.model;
-import jakarta.persistence.MappedSuperclass;
+package com.abdulajeejunnisa.orderapp.dto;
 
-@MappedSuperclass
-public abstract class User {
+public class CreateDriverRequest {
 
-    protected String name;
-    protected String email;
-    protected String phoneNo;
+    private String name;
+    private String email;
+    private String phoneNo;
+    private String vehicleNumber;
 
-    public User() {
-    }
-
-    public User(String name, String email, String phoneNo) {
-        this.name = name;
-        this.email = email;
-        this.phoneNo = phoneNo;
+    public CreateDriverRequest() {
     }
 
     public String getName() {
@@ -39,5 +32,13 @@ public abstract class User {
 
     public void setPhoneNo(String phoneNo) {
         this.phoneNo = phoneNo;
+    }
+
+    public String getVehicleNumber() {
+        return vehicleNumber;
+    }
+
+    public void setVehicleNumber(String vehicleNumber) {
+        this.vehicleNumber = vehicleNumber;
     }
 }
