@@ -1,5 +1,6 @@
 package com.abdulajeejunnisa.orderapp.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 
 @Entity
@@ -23,6 +24,7 @@ public class Order {
 
     @ManyToOne
     @JoinColumn(name = "driver_id")
+    //@JsonIgnoreProperties("orders")
     private Driver driver;
 
     @ManyToOne
@@ -33,10 +35,12 @@ public class Order {
     }
 
     public Long getOrderId() {
+
         return orderId;
     }
 
     public void setOrderId(Long orderId) {
+
         this.orderId = orderId;
     }
 

@@ -1,5 +1,9 @@
 package com.abdulajeejunnisa.orderapp.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 @Entity
@@ -12,6 +16,12 @@ public class Driver extends User {
 
     private String vehicleNumber;
 
+    private boolean available = true;
+
+    @OneToMany(mappedBy = "driver")
+    @JsonIgnore
+    private List<Order> orders = new ArrayList<>();
+
     public Driver() {
     }
 
@@ -22,6 +32,14 @@ public class Driver extends User {
 
         super(name, email, phoneNo);
         this.vehicleNumber = vehicleNumber;
+    }
+
+    public void setAvailable(boolean available) {
+        this.available = available;
+    }
+
+    public boolean isAvailable() {
+        return available;
     }
 
     public Long getDriverId() {

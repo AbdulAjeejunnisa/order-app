@@ -2,6 +2,8 @@ package com.abdulajeejunnisa.orderapp.service;
 
 import com.abdulajeejunnisa.orderapp.model.Location;
 import com.abdulajeejunnisa.orderapp.repository.LocationRepository;
+import jakarta.transaction.Transactional;
+import com.abdulajeejunnisa.orderapp.dto.UpdateLocationRequest;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -27,4 +29,21 @@ public class LocationService {
         return locationRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Location Not Found"));
     }
+
+    public Location updateLocation(Long id,
+                                   Location updatedLocation) {
+
+        Location location = getLocationById(id);
+
+        location.setCity(updatedLocation.getCity());
+        location.setState(updatedLocation.getState());
+        location.setCountry(updatedLocation.getCountry());
+        location.setPinCode(updatedLocation.getPinCode());
+
+        return locationRepository.save(location);
+    }
+    public void deleteLocation(Long id) {
+        locationRepository.deleteById(id);
+    }
+
 }
