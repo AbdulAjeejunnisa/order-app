@@ -1,29 +1,14 @@
-package com.abdulajeejunnisa.orderapp.model;
+package com.abdulajeejunnisa.orderapp.dto;
 
-import jakarta.persistence.*;
-
-@Entity
-@Table(name = "locations")
-public class Location {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long locationId;
+public class CreateLocationRequest {
 
     private String city;
     private String state;
     private String country;
+
     private String pinCode;
 
-    public Location() {
-    }
-
-    public Long getLocationId() {
-        return locationId;
-    }
-
-    public void setLocationId(Long locationId) {
-        this.locationId = locationId;
+    public CreateLocationRequest() {
     }
 
     public String getCity() {

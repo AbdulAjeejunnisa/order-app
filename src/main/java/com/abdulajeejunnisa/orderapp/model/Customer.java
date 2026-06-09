@@ -1,31 +1,42 @@
 package com.abdulajeejunnisa.orderapp.model;
 
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "customers")
 public class Customer extends User {
-    private final String address;
-    public Customer(
-            int uid,
-            String name,
-            String email,
-            String phoneNo,
-            String address
-    ) {
 
-        super(uid, name, email, phoneNo);
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long customerId;
 
-        if (address == null || address.isBlank()) {
-            throw new IllegalArgumentException("Address cannot be empty");
-        }
-        this.address = address.trim();
+    private String address;
+
+    public Customer() {
     }
+
+    public Customer(String name,
+                    String email,
+                    String phoneNo,
+                    String address) {
+
+        super(name, email, phoneNo);
+        this.address = address;
+    }
+
+    public Long getCustomerId() {
+        return customerId;
+    }
+
+    public void setCustomerId(Long customerId) {
+        this.customerId = customerId;
+    }
+
     public String getAddress() {
         return address;
     }
 
-    @Override
-    public String toString() {
-        return "Customer{" +
-                "name='" + getName() + '\'' +
-                ", address='" + address + '\'' +
-                '}';
+    public void setAddress(String address) {
+        this.address = address;
     }
 }

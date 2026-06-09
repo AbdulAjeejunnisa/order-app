@@ -1,20 +1,16 @@
-package com.abdulajeejunnisa.orderapp.model;
-import jakarta.persistence.MappedSuperclass;
+package com.abdulajeejunnisa.orderapp.dto;
 
-@MappedSuperclass
-public abstract class User {
+public class CreateCustomerRequest {
 
-    protected String name;
-    protected String email;
-    protected String phoneNo;
+    private String name;
 
-    public User() {
-    }
+    private String email;
 
-    public User(String name, String email, String phoneNo) {
-        this.name = name;
-        this.email = email;
-        this.phoneNo = phoneNo;
+    private String phoneNo;
+
+    private String address;
+
+    public CreateCustomerRequest() {
     }
 
     public String getName() {
@@ -39,5 +35,13 @@ public abstract class User {
 
     public void setPhoneNo(String phoneNo) {
         this.phoneNo = phoneNo;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
     }
 }
