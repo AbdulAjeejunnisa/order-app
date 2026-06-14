@@ -1,0 +1,337 @@
+Index: pom.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><project xmlns=\"http://maven.apache.org/POM/4.0.0\"\n         xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"\n         xsi:schemaLocation=\"http://maven.apache.org/POM/4.0.0\n         https://maven.apache.org/xsd/maven-4.0.0.xsd\">\n\n    <modelVersion>4.0.0</modelVersion>\n\n    <parent>\n        <groupId>org.springframework.boot</groupId>\n        <artifactId>spring-boot-starter-parent</artifactId>\n        <version>3.5.4</version>\n        <relativePath/>\n    </parent>\n\n    <groupId>com.abdulajeejunnisa</groupId>\n    <artifactId>orderapp</artifactId>\n    <version>1.0.0</version>\n    <name>Order Tracking System</name>\n\n    <properties>\n        <java.version>25</java.version>\n    </properties>\n\n    <dependencies>\n\n        <!-- Spring Web -->\n        <dependency>\n            <groupId>org.springframework.boot</groupId>\n            <artifactId>spring-boot-starter-web</artifactId>\n        </dependency>\n\n        <!-- Spring Data JPA -->\n        <dependency>\n            <groupId>org.springframework.boot</groupId>\n            <artifactId>spring-boot-starter-data-jpa</artifactId>\n        </dependency>\n\n        <!-- PostgreSQL -->\n        <dependency>\n            <groupId>org.postgresql</groupId>\n            <artifactId>postgresql</artifactId>\n        </dependency>\n\n        <!-- Validation -->\n        <dependency>\n            <groupId>org.springframework.boot</groupId>\n            <artifactId>spring-boot-starter-validation</artifactId>\n        </dependency>\n\n        <!-- WebSocket -->\n        <dependency>\n            <groupId>org.springframework.boot</groupId>\n            <artifactId>spring-boot-starter-websocket</artifactId>\n        </dependency>\n\n        <!-- Lombok -->\n        <dependency>\n            <groupId>org.projectlombok</groupId>\n            <artifactId>lombok</artifactId>\n            <optional>true</optional>\n        </dependency>\n\n        <!-- Testing -->\n        <dependency>\n            <groupId>org.springframework.boot</groupId>\n            <artifactId>spring-boot-starter-test</artifactId>\n            <scope>test</scope>\n        </dependency>\n\n        <dependency>\n            <groupId>org.mockito</groupId>\n            <artifactId>mockito-core</artifactId>\n            <scope>test</scope>\n        </dependency>\n\n    </dependencies>\n\n    <build>\n        <plugins>\n\n            <plugin>\n                <groupId>org.springframework.boot</groupId>\n                <artifactId>spring-boot-maven-plugin</artifactId>\n            </plugin>\n\n        </plugins>\n    </build>\n\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/pom.xml b/pom.xml
+--- a/pom.xml	(revision a136e4c6789b71b6ac06c44c5983bc1ae6ac301a)
++++ b/pom.xml	(date 1780849929039)
+@@ -18,7 +18,7 @@
+     <name>Order Tracking System</name>
+ 
+     <properties>
+-        <java.version>25</java.version>
++        <java.version>21</java.version>
+     </properties>
+ 
+     <dependencies>
+Index: .idea/encodings.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/encodings.xml b/.idea/encodings.xml
+deleted file mode 100644
+--- a/.idea/encodings.xml	(revision a136e4c6789b71b6ac06c44c5983bc1ae6ac301a)
++++ /dev/null	(revision a136e4c6789b71b6ac06c44c5983bc1ae6ac301a)
+@@ -1,7 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<project version="4">
+-  <component name="Encoding">
+-    <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
+-    <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
+-  </component>
+-</project>
+\ No newline at end of file
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+deleted file mode 100644
+--- a/.idea/misc.xml	(revision a136e4c6789b71b6ac06c44c5983bc1ae6ac301a)
++++ /dev/null	(revision a136e4c6789b71b6ac06c44c5983bc1ae6ac301a)
+@@ -1,14 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<project version="4">
+-  <component name="ExternalStorageConfigurationManager" enabled="true" />
+-  <component name="MavenProjectsManager">
+-    <option name="originalFiles">
+-      <list>
+-        <option value="$PROJECT_DIR$/pom.xml" />
+-      </list>
+-    </option>
+-  </component>
+-  <component name="ProjectRootManager" version="2" languageLevel="JDK_25" default="true" project-jdk-name="25" project-jdk-type="JavaSDK">
+-    <output url="file://$PROJECT_DIR$/out" />
+-  </component>
+-</project>
+\ No newline at end of file
+Index: .idea/.gitignore
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/.gitignore b/.idea/.gitignore
+deleted file mode 100644
+--- a/.idea/.gitignore	(revision a136e4c6789b71b6ac06c44c5983bc1ae6ac301a)
++++ /dev/null	(revision a136e4c6789b71b6ac06c44c5983bc1ae6ac301a)
+@@ -1,10 +0,0 @@
+-# Default ignored files
+-/shelf/
+-/workspace.xml
+-# Editor-based HTTP Client requests
+-/httpRequests/
+-# Ignored default folder with query files
+-/queries/
+-# Datasource local storage ignored files
+-/dataSources/
+-/dataSources.local.xml
+Index: src/main/java/com/abdulajeejunnisa/orderapp/model/Order.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.abdulajeejunnisa.orderapp.model;\n\nimport com.fasterxml.jackson.annotation.JsonIgnoreProperties;\nimport jakarta.persistence.*;\n\n@Entity\n@Table(name = \"orders\")\npublic class Order {\n\n    @Id\n    @GeneratedValue(strategy = GenerationType.IDENTITY)\n    private Long orderId;\n\n    private String itemName;\n\n    private Integer quantity;\n\n    @Enumerated(EnumType.STRING)\n    private OrderStatus status;\n\n    @ManyToOne\n    @JoinColumn(name = \"customer_id\")\n    private Customer customer;\n\n    @ManyToOne\n    @JoinColumn(name = \"driver_id\")\n    //@JsonIgnoreProperties(\"orders\")\n    private Driver driver;\n\n    @ManyToOne\n    @JoinColumn(name = \"location_id\")\n    private Location location;\n\n    public Order() {\n    }\n\n    public Long getOrderId() {\n\n        return orderId;\n    }\n\n    public void setOrderId(Long orderId) {\n\n        this.orderId = orderId;\n    }\n\n    public String getItemName() {\n        return itemName;\n    }\n\n    public void setItemName(String itemName) {\n        this.itemName = itemName;\n    }\n\n    public Integer getQuantity() {\n        return quantity;\n    }\n\n    public void setQuantity(Integer quantity) {\n        this.quantity = quantity;\n    }\n\n    public OrderStatus getStatus() {\n        return status;\n    }\n\n    public void setStatus(OrderStatus status) {\n        this.status = status;\n    }\n\n    public Customer getCustomer() {\n        return customer;\n    }\n\n    public void setCustomer(Customer customer) {\n        this.customer = customer;\n    }\n\n    public Driver getDriver() {\n        return driver;\n    }\n\n    public void setDriver(Driver driver) {\n        this.driver = driver;\n    }\n\n    public Location getLocation() {\n        return location;\n    }\n\n    public void setLocation(Location location) {\n        this.location = location;\n    }\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/abdulajeejunnisa/orderapp/model/Order.java b/src/main/java/com/abdulajeejunnisa/orderapp/model/Order.java
+--- a/src/main/java/com/abdulajeejunnisa/orderapp/model/Order.java	(revision a136e4c6789b71b6ac06c44c5983bc1ae6ac301a)
++++ b/src/main/java/com/abdulajeejunnisa/orderapp/model/Order.java	(date 1780833360846)
+@@ -1,7 +1,14 @@
+ package com.abdulajeejunnisa.orderapp.model;
+ 
+-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+-import jakarta.persistence.*;
++import jakarta.persistence.Entity;
++import jakarta.persistence.EnumType;
++import jakarta.persistence.Enumerated;
++import jakarta.persistence.GeneratedValue;
++import jakarta.persistence.GenerationType;
++import jakarta.persistence.Id;
++import jakarta.persistence.JoinColumn;
++import jakarta.persistence.ManyToOne;
++import jakarta.persistence.Table;
+ 
+ @Entity
+ @Table(name = "orders")
+Index: src/main/resources/application.properties
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>spring.application.name=orderapp\n\nspring.datasource.url=jdbc:postgresql://localhost:5433/demo\nspring.datasource.username=postgres\nspring.datasource.password=muskan\n\nspring.jpa.hibernate.ddl-auto=update\nspring.jpa.show-sql=true\nserver.port=8080\nlogging.level.org.hibernate.SQL=DEBUG\nlogging.level.org.hibernate.type.descriptor.sql.BasicBinder=TRACE
+===================================================================
+diff --git a/src/main/resources/application.properties b/src/main/resources/application.properties
+--- a/src/main/resources/application.properties	(revision a136e4c6789b71b6ac06c44c5983bc1ae6ac301a)
++++ b/src/main/resources/application.properties	(date 1781016898749)
+@@ -1,11 +1,15 @@
+ spring.application.name=orderapp
+ 
+-spring.datasource.url=jdbc:postgresql://localhost:5433/demo
++spring.datasource.url=jdbc:postgresql://host.docker.internal:5433/demo
+ spring.datasource.username=postgres
+ spring.datasource.password=muskan
+ 
++spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.PostgreSQLDialect
++
+ spring.jpa.hibernate.ddl-auto=update
+ spring.jpa.show-sql=true
++
+ server.port=8080
++
+ logging.level.org.hibernate.SQL=DEBUG
+ logging.level.org.hibernate.type.descriptor.sql.BasicBinder=TRACE
+\ No newline at end of file
+Index: src/main/java/com/abdulajeejunnisa/orderapp/service/DriverService.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.abdulajeejunnisa.orderapp.service;\n\nimport com.abdulajeejunnisa.orderapp.dto.UpdateDriverRequest;\nimport com.abdulajeejunnisa.orderapp.model.Driver;\nimport com.abdulajeejunnisa.orderapp.repository.DriverRepository;\nimport org.springframework.stereotype.Service;\n\nimport java.util.List;\n\n@Service\npublic class DriverService {\n\n    private final DriverRepository driverRepository;\n\n    public DriverService(DriverRepository driverRepository) {\n\n        this.driverRepository = driverRepository;\n    }\n\n    public Driver saveDriver(Driver driver) {\n        return driverRepository.save(driver);\n    }\n\n    public List<Driver> getAllDrivers() {\n        return driverRepository.findAll();\n    }\n\n    public Driver getDriverById(Long id) {\n        return driverRepository.findById(id)\n                .orElseThrow(() ->\n                        new RuntimeException(\"Driver Not Found\"));\n    }\n    public List<Driver> getAvailableDrivers() {\n        return driverRepository.findByAvailable(true);\n    }\n\n    public List<Driver> getUnassignedDrivers() {\n        return driverRepository.findByOrdersIsEmpty();\n    }\n\n    public List<Driver> getAssignedDrivers() {\n        return driverRepository.findByOrdersIsNotEmpty();\n    }\n\n    public Driver updateDriver(\n            Long id,\n            UpdateDriverRequest request) {\n\n        Driver driver = driverRepository.findById(id)\n                .orElseThrow(() ->\n                        new RuntimeException(\"Driver Not Found\"));\n\n        driver.setName(request.getName());\n        driver.setEmail(request.getEmail());\n        driver.setPhoneNo(request.getPhoneNo());\n        driver.setVehicleNumber(request.getVehicleNumber());\n        driver.setAvailable(request.isAvailable());\n\n        return driverRepository.save(driver);\n    }\n    public void deleteDriver(Long id) {\n\n        if (!driverRepository.existsById(id)) {\n            throw new RuntimeException(\"Driver Not Found\");\n        }\n\n        driverRepository.deleteById(id);\n    }\n}
+===================================================================
+diff --git a/src/main/java/com/abdulajeejunnisa/orderapp/service/DriverService.java b/src/main/java/com/abdulajeejunnisa/orderapp/service/DriverService.java
+--- a/src/main/java/com/abdulajeejunnisa/orderapp/service/DriverService.java	(revision a136e4c6789b71b6ac06c44c5983bc1ae6ac301a)
++++ b/src/main/java/com/abdulajeejunnisa/orderapp/service/DriverService.java	(date 1780837583255)
+@@ -31,6 +31,7 @@
+                         new RuntimeException("Driver Not Found"));
+     }
+     public List<Driver> getAvailableDrivers() {
++
+         return driverRepository.findByAvailable(true);
+     }
+ 
+Index: src/main/java/com/abdulajeejunnisa/orderapp/dto/UpdateCustomerRequest.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.abdulajeejunnisa.orderapp.dto;\n\nimport jakarta.validation.constraints.Email;\nimport jakarta.validation.constraints.NotBlank;\nimport lombok.Data;\n\n@Data\npublic class UpdateCustomerRequest {\n\n    @NotBlank\n    private String name;\n\n    @Email\n    private String email;\n\n    @NotBlank\n    private String phoneNo;\n\n    @NotBlank\n    private String address;\n}
+===================================================================
+diff --git a/src/main/java/com/abdulajeejunnisa/orderapp/dto/UpdateCustomerRequest.java b/src/main/java/com/abdulajeejunnisa/orderapp/dto/UpdateCustomerRequest.java
+--- a/src/main/java/com/abdulajeejunnisa/orderapp/dto/UpdateCustomerRequest.java	(revision a136e4c6789b71b6ac06c44c5983bc1ae6ac301a)
++++ b/src/main/java/com/abdulajeejunnisa/orderapp/dto/UpdateCustomerRequest.java	(date 1780837708906)
+@@ -18,4 +18,36 @@
+ 
+     @NotBlank
+     private String address;
++
++    public @NotBlank String getName() {
++        return name;
++    }
++
++    public void setName(@NotBlank String name) {
++        this.name = name;
++    }
++
++    public @Email String getEmail() {
++        return email;
++    }
++
++    public void setEmail(@Email String email) {
++        this.email = email;
++    }
++
++    public @NotBlank String getPhoneNo() {
++        return phoneNo;
++    }
++
++    public void setPhoneNo(@NotBlank String phoneNo) {
++        this.phoneNo = phoneNo;
++    }
++
++    public @NotBlank String getAddress() {
++        return address;
++    }
++
++    public void setAddress(@NotBlank String address) {
++        this.address = address;
++    }
+ }
+\ No newline at end of file
+Index: src/main/java/com/abdulajeejunnisa/orderapp/dto/UpdateDriverRequest.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.abdulajeejunnisa.orderapp.dto;\n\nimport jakarta.validation.constraints.Email;\nimport jakarta.validation.constraints.NotBlank;\nimport lombok.Data;\n\n@Data\npublic class UpdateDriverRequest {\n\n    @NotBlank\n    private String name;\n\n    @Email\n    private String email;\n\n    @NotBlank\n    private String phoneNo;\n\n    @NotBlank\n    private String vehicleNumber;\n\n    private boolean available;\n}
+===================================================================
+diff --git a/src/main/java/com/abdulajeejunnisa/orderapp/dto/UpdateDriverRequest.java b/src/main/java/com/abdulajeejunnisa/orderapp/dto/UpdateDriverRequest.java
+--- a/src/main/java/com/abdulajeejunnisa/orderapp/dto/UpdateDriverRequest.java	(revision a136e4c6789b71b6ac06c44c5983bc1ae6ac301a)
++++ b/src/main/java/com/abdulajeejunnisa/orderapp/dto/UpdateDriverRequest.java	(date 1780838922689)
+@@ -20,4 +20,44 @@
+     private String vehicleNumber;
+ 
+     private boolean available;
++
++    public @NotBlank String getName() {
++        return name;
++    }
++
++    public void setName(@NotBlank String name) {
++        this.name = name;
++    }
++
++    public @Email String getEmail() {
++        return email;
++    }
++
++    public void setEmail(@Email String email) {
++        this.email = email;
++    }
++
++    public @NotBlank String getPhoneNo() {
++        return phoneNo;
++    }
++
++    public void setPhoneNo(@NotBlank String phoneNo) {
++        this.phoneNo = phoneNo;
++    }
++
++    public @NotBlank String getVehicleNumber() {
++        return vehicleNumber;
++    }
++
++    public void setVehicleNumber(@NotBlank String vehicleNumber) {
++        this.vehicleNumber = vehicleNumber;
++    }
++
++    public boolean isAvailable() {
++        return available;
++    }
++
++    public void setAvailable(boolean available) {
++        this.available = available;
++    }
+ }
+\ No newline at end of file
+Index: src/main/java/com/abdulajeejunnisa/orderapp/repository/DriverRepository.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.abdulajeejunnisa.orderapp.repository;\n\nimport com.abdulajeejunnisa.orderapp.model.Driver;\nimport org.springframework.data.jpa.repository.JpaRepository;\nimport org.springframework.data.jpa.repository.Query;\nimport org.springframework.stereotype.Repository;\nimport java.util.List;\n\n@Repository\npublic interface DriverRepository\n        extends JpaRepository<Driver, Long> {\n    List<Driver> findByAvailable(boolean available);\n    List<Driver> findByOrdersIsEmpty();\n\n    List<Driver> findByOrdersIsNotEmpty();\n}
+===================================================================
+diff --git a/src/main/java/com/abdulajeejunnisa/orderapp/repository/DriverRepository.java b/src/main/java/com/abdulajeejunnisa/orderapp/repository/DriverRepository.java
+--- a/src/main/java/com/abdulajeejunnisa/orderapp/repository/DriverRepository.java	(revision a136e4c6789b71b6ac06c44c5983bc1ae6ac301a)
++++ b/src/main/java/com/abdulajeejunnisa/orderapp/repository/DriverRepository.java	(date 1780842011742)
+@@ -1,16 +1,15 @@
+ package com.abdulajeejunnisa.orderapp.repository;
+ 
+-import com.abdulajeejunnisa.orderapp.model.Driver;
++import java.util.List;
++
+ import org.springframework.data.jpa.repository.JpaRepository;
+-import org.springframework.data.jpa.repository.Query;
+ import org.springframework.stereotype.Repository;
+-import java.util.List;
++import com.abdulajeejunnisa.orderapp.model.Driver;
+ 
+ @Repository
+ public interface DriverRepository
+         extends JpaRepository<Driver, Long> {
+     List<Driver> findByAvailable(boolean available);
+     List<Driver> findByOrdersIsEmpty();
+-
+     List<Driver> findByOrdersIsNotEmpty();
+ }
+\ No newline at end of file
+Index: src/main/java/com/abdulajeejunnisa/orderapp/Controller/DriverController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.abdulajeejunnisa.orderapp.Controller;\n\nimport com.abdulajeejunnisa.orderapp.dto.UpdateDriverRequest;\nimport com.abdulajeejunnisa.orderapp.model.Driver;\nimport com.abdulajeejunnisa.orderapp.service.DriverService;\nimport org.springframework.http.ResponseEntity;\nimport org.springframework.web.bind.annotation.*;\n\nimport java.util.List;\n\n@RestController\n@RequestMapping(\"/drivers\")\n@CrossOrigin(\"*\")\npublic class DriverController {\n\n    private final DriverService driverService;\n\n    public DriverController(\n            DriverService driverService) {\n\n        this.driverService = driverService;\n    }\n\n    @PostMapping\n    public Driver createDriver(\n            @RequestBody Driver driver) {\n\n        return driverService.saveDriver(driver);\n    }\n\n    @GetMapping\n    public List<Driver> getAllDrivers() {\n\n        return driverService.getAllDrivers();\n    }\n\n    @GetMapping(\"/{id}\")\n    public Driver getDriverById(\n            @PathVariable Long id) {\n\n        return driverService.getDriverById(id);\n    }\n    @PutMapping(\"/{id}\")\n    public Driver updateDriver(\n            @PathVariable Long id,\n            @RequestBody UpdateDriverRequest request) {\n\n        return driverService.updateDriver(id, request);\n    }\n    @DeleteMapping(\"/{id}\")\n    public String deleteDriver(@PathVariable Long id) {\n\n        driverService.deleteDriver(id);\n\n        return \"Driver Deleted Successfully\";\n    }\n    @GetMapping(\"/available\")\n    public List<Driver> getAvailableDrivers() {\n\n        return driverService.getAvailableDrivers();\n    }\n    @GetMapping(\"/unassigned\")\n    public ResponseEntity<List<Driver>> getUnassignedDrivers() {\n        return ResponseEntity.ok(driverService.getUnassignedDrivers());\n    }\n\n    @GetMapping(\"/assigned\")\n    public ResponseEntity<List<Driver>> getAssignedDrivers() {\n        return ResponseEntity.ok(driverService.getAssignedDrivers());\n    }\n}
+===================================================================
+diff --git a/src/main/java/com/abdulajeejunnisa/orderapp/Controller/DriverController.java b/src/main/java/com/abdulajeejunnisa/orderapp/Controller/DriverController.java
+--- a/src/main/java/com/abdulajeejunnisa/orderapp/Controller/DriverController.java	(revision a136e4c6789b71b6ac06c44c5983bc1ae6ac301a)
++++ b/src/main/java/com/abdulajeejunnisa/orderapp/Controller/DriverController.java	(date 1780845317295)
+@@ -33,13 +33,25 @@
+ 
+         return driverService.getAllDrivers();
+     }
++    @GetMapping("/available")
++    public List<Driver> getAvailableDrivers() {
+ 
+-    @GetMapping("/{id}")
+-    public Driver getDriverById(
+-            @PathVariable Long id) {
++        return driverService.getAvailableDrivers();
++    }
++    @GetMapping("/unassigned")
++    public ResponseEntity<List<Driver>> getUnassignedDrivers() {
++        return ResponseEntity.ok(driverService.getUnassignedDrivers());
++    }
+ 
++    @GetMapping("/assigned")
++    public ResponseEntity<List<Driver>> getAssignedDrivers() {
++        return ResponseEntity.ok(driverService.getAssignedDrivers());
++    }
++    @GetMapping("/{id:\\d+}")
++    public Driver getDriverById(@PathVariable Long id) {
+         return driverService.getDriverById(id);
+     }
++
+     @PutMapping("/{id}")
+     public Driver updateDriver(
+             @PathVariable Long id,
+@@ -54,18 +66,5 @@
+ 
+         return "Driver Deleted Successfully";
+     }
+-    @GetMapping("/available")
+-    public List<Driver> getAvailableDrivers() {
+ 
+-        return driverService.getAvailableDrivers();
+-    }
+-    @GetMapping("/unassigned")
+-    public ResponseEntity<List<Driver>> getUnassignedDrivers() {
+-        return ResponseEntity.ok(driverService.getUnassignedDrivers());
+-    }
+-
+-    @GetMapping("/assigned")
+-    public ResponseEntity<List<Driver>> getAssignedDrivers() {
+-        return ResponseEntity.ok(driverService.getAssignedDrivers());
+-    }
+ }
+\ No newline at end of file

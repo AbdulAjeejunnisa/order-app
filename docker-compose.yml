@@ -1,0 +1,16 @@
+services:
+
+  orderapp:
+    build: .
+
+    container_name: orderapp
+
+    ports:
+      - "8080:8080"
+
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://host.docker.internal:5433/demo
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: muskan
+
+    restart: unless-stopped
