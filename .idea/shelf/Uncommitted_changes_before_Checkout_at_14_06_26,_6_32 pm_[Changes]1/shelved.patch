@@ -1,0 +1,30 @@
+Index: .idea/kotlinc.xml
+===================================================================
+diff --git a/.idea/kotlinc.xml b/.idea/kotlinc.xml
+deleted file mode 100644
+--- a/.idea/kotlinc.xml	(revision a136e4c6789b71b6ac06c44c5983bc1ae6ac301a)
++++ /dev/null	(revision a136e4c6789b71b6ac06c44c5983bc1ae6ac301a)
+@@ -1,7 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<project version="4">
+-  <component name="KotlinJpsPluginSettings">
+-    <option name="externalSystemId" value="Maven" />
+-    <option name="version" value="2.3.10" />
+-  </component>
+-</project>
+\ No newline at end of file
+Index: .idea/vcs.xml
+===================================================================
+diff --git a/.idea/vcs.xml b/.idea/vcs.xml
+deleted file mode 100644
+--- a/.idea/vcs.xml	(revision a136e4c6789b71b6ac06c44c5983bc1ae6ac301a)
++++ /dev/null	(revision a136e4c6789b71b6ac06c44c5983bc1ae6ac301a)
+@@ -1,7 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<project version="4">
+-  <component name="VcsDirectoryMappings">
+-    <mapping directory="" vcs="Git" />
+-    <mapping directory="$PROJECT_DIR$" vcs="Git" />
+-  </component>
+-</project>
+\ No newline at end of file
